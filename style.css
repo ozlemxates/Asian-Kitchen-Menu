@@ -32,6 +32,12 @@ h2 {
   border: none;
   outline: 1px solid black;
   background-color: #f1f5f8;
+  transition: 0.4s ease ;
+}
+
+.btn-item:hover {
+  background-color: rgb(18, 18, 18);
+  color: #f1f5f8;
 }
 
 .photo {
