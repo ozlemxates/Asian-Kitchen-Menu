@@ -32,7 +32,7 @@ const menu = [
     category: "China",
     price: 5.99,
     img:
-      "https://www.savingdessert.com/wp-content/uploads/2019/02/Dan-Dan-Noodles-10.jpg",
+      "https://www.chilipeppermadness.com/wp-content/uploads/2021/05/Dan-Dan-Noodles-Recipe1.webp",
     desc: `Dan dan noodle, serving with green onion `,
   },
   {
@@ -81,3 +81,40 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+function getmenu() {
+  let divMenu = document.getElementById("divMenu");
+  // divMenu.innerHTML = "";
+
+  for (let item of menu) {
+    let menuItem = document.createElement("div");
+    menuItem.classList.add("menu-items");
+
+    let image = document.createElement("img");
+    image.src = item.img;
+    image.classList.add("photo");
+
+    let menuInfo = document.createElement("div");
+    menuInfo.classList.add("menu-info");
+
+    let title = document.createElement("h4");
+    title.innerHTML = item.title;
+
+    let price = document.createElement("h4");
+    price.classList.add("price");
+    price.innerHTML = `$${item.price}`;
+
+    let desc = document.createElement("p");
+    desc.classList.add("item-text");
+    desc.innerHTML = item.desc;
+
+  
+    menuInfo.appendChild(title);
+    menuInfo.appendChild(price);
+    menuInfo.appendChild(desc);
+    menuItem.appendChild(image);
+    menuItem.appendChild(menuInfo);
+    divMenu.appendChild(menuItem);
+  }
+}
+getmenu();
