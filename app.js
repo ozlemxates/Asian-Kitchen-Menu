@@ -82,11 +82,11 @@ let menu = [
   },
 ];
 
-function createItems() {
+function createItems(createMenu) {
   let divMenu = document.getElementById("divMenu");
   divMenu.innerHTML = "";
 
-  for (let item of menu) {
+  for (let item of createMenu) {
     let menuItem = document.createElement("div");
     menuItem.classList.add("menu-items");
 
@@ -121,23 +121,24 @@ function createItems() {
   }
 }
 
+createItems(menu);
+
 function all() {
-  
-  createItems();
+  let menuAll= [...menu]
+  createItems(menuAll); 
 }
-all()
 
 function korea() {
-  menu = menu.filter((item) => item.category == "Korea");
-  createItems();
+  let menuKorea = menu.filter((item) => item.category === "Korea");
+  createItems(menuKorea); 
 }
 
 function japan() {
-  menu = menu.filter((item) => item.category == "Japan");
-  createItems();
+  let menuJapan = menu.filter((item) => item.category === "Japan");
+  createItems(menuJapan); 
 }
 
 function china() {
-  menu = menu.filter((item) => item.category == "China");
-  createItems();
+  let menuChina = menu.filter((item) => item.category === "China");
+  createItems(menuChina); 
 }
