@@ -1,4 +1,4 @@
-const menu = [
+let menu = [
   {
     id: 1,
     title: "Tteokbokki",
@@ -125,18 +125,123 @@ getMenu();
 function all () {}
 
 function korea() {
-  const koreaMenuItems = menu.filter((item) => item.category = "Korea");
+  menu = menu.filter((item) => item.category == "Korea");
+  let divMenu = document.getElementById("divMenu");
+  divMenu.innerHTML = "";
+
+  for (let item of menu) {
+    let menuItem = document.createElement("div");
+    menuItem.classList.add("menu-items");
+
+    let image = document.createElement("img");
+    image.src = item.img;
+    image.classList.add("photo");
+
+    let menuInfo = document.createElement("div");
+    menuInfo.classList.add("menu-info");
+
+    let menuTitle = document.createElement("div");
+    menuTitle.classList.add("menu-title")
+
+    let title = document.createElement("h4");
+    title.innerHTML = item.title;
+
+    let price = document.createElement("span");
+    price.classList.add("price");
+    price.innerHTML = `$${item.price}`;
+
+    let desc = document.createElement("p");
+    desc.classList.add("menu-text");
+    desc.innerHTML = item.desc;
+
+    menuInfo.appendChild(menuTitle)
+    menuTitle.appendChild(title);
+    menuTitle.appendChild(price);
+    menuInfo.appendChild(desc);
+    menuItem.appendChild(image);
+    menuItem.appendChild(menuInfo);
+    divMenu.appendChild(menuItem);
+  }
+}
+
+function japan() {
+  menu = menu.filter((item) => item.category == "Japan");
 
   let divMenu = document.getElementById("divMenu");
   divMenu.innerHTML = "";
 
-  getMenu(koreaMenuItems)
+  for (let item of menu) {
+    let menuItem = document.createElement("div");
+    menuItem.classList.add("menu-items");
+
+    let image = document.createElement("img");
+    image.src = item.img;
+    image.classList.add("photo");
+
+    let menuInfo = document.createElement("div");
+    menuInfo.classList.add("menu-info");
+
+    let menuTitle = document.createElement("div");
+    menuTitle.classList.add("menu-title")
+
+    let title = document.createElement("h4");
+    title.innerHTML = item.title;
+
+    let price = document.createElement("span");
+    price.classList.add("price");
+    price.innerHTML = `$${item.price}`;
+
+    let desc = document.createElement("p");
+    desc.classList.add("menu-text");
+    desc.innerHTML = item.desc;
+
+    menuInfo.appendChild(menuTitle)
+    menuTitle.appendChild(title);
+    menuTitle.appendChild(price);
+    menuInfo.appendChild(desc);
+    menuItem.appendChild(image);
+    menuItem.appendChild(menuInfo);
+    divMenu.appendChild(menuItem);
+  }
 }
 
-function japan() {
-  const japanMenuItems = menu.filter((item) => item.category !== "Japan");
-}
+function china() {
+  menu = menu.filter((item) => item.category == "China");
 
-function China() {
-  const chinaMenuItems = menu.filter((item) => item.category !== "China");
+  let divMenu = document.getElementById("divMenu");
+  divMenu.innerHTML = "";
+
+  for (let item of menu) {
+    let menuItem = document.createElement("div");
+    menuItem.classList.add("menu-items");
+
+    let image = document.createElement("img");
+    image.src = item.img;
+    image.classList.add("photo");
+
+    let menuInfo = document.createElement("div");
+    menuInfo.classList.add("menu-info");
+
+    let menuTitle = document.createElement("div");
+    menuTitle.classList.add("menu-title")
+
+    let title = document.createElement("h4");
+    title.innerHTML = item.title;
+
+    let price = document.createElement("span");
+    price.classList.add("price");
+    price.innerHTML = `$${item.price}`;
+
+    let desc = document.createElement("p");
+    desc.classList.add("menu-text");
+    desc.innerHTML = item.desc;
+
+    menuInfo.appendChild(menuTitle)
+    menuTitle.appendChild(title);
+    menuTitle.appendChild(price);
+    menuInfo.appendChild(desc);
+    menuItem.appendChild(image);
+    menuItem.appendChild(menuInfo);
+    divMenu.appendChild(menuItem);
+  }
 }
