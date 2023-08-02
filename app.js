@@ -124,8 +124,8 @@ function createItems(createMenu) {
 createItems(menu);
 
 function all() {
-  let menuAll= [...menu]
-  createItems(menuAll); 
+  let menuAll = menu.filter(item => item.category === "Korea" || item.category === "Japan" || item.category === "China");
+  createItems(menuAll);
 }
 
 function korea() {
