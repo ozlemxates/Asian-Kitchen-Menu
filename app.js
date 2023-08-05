@@ -120,10 +120,9 @@ function createItems(createMenu) {
     divMenu.appendChild(menuItem);
   }
 }
-
 createItems(menu);
 
-function all() {
+function allItems() {
   let menuAll = menu.filter(item => item.category === "Korea" || item.category === "Japan" || item.category === "China");
   createItems(menuAll);
 }
