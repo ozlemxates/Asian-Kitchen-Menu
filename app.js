@@ -85,7 +85,6 @@ let menu = [
 function createItems(createMenu) {
   let divMenu = document.getElementById("divMenu");
   divMenu.innerHTML = "";
-
   for (let item of createMenu) {
     let menuItem = document.createElement("div");
     menuItem.classList.add("menu-items");
@@ -127,17 +126,7 @@ function allItems() {
   createItems(menuAll);
 }
 
-function korea() {
-  let menuKorea = menu.filter((item) => item.category === "Korea");
-  createItems(menuKorea); 
-}
-
-function japan() {
-  let menuJapan = menu.filter((item) => item.category === "Japan");
-  createItems(menuJapan); 
-}
-
-function china() {
-  let menuChina = menu.filter((item) => item.category === "China");
-  createItems(menuChina); 
+function menuCategories (category) {
+  let cuisines = menu.filter(item => item.category === category);
+  createItems(cuisines);
 }
