@@ -85,7 +85,8 @@ let menu = [
 function createItems(createMenu) {
   let divMenu = document.getElementById("divMenu");
   divMenu.innerHTML = "";
-  for (let item of createMenu) {
+  
+  createMenu.forEach(item => {
     let menuItem = document.createElement("div");
     menuItem.classList.add("menu-items");
 
@@ -117,7 +118,8 @@ function createItems(createMenu) {
     menuItem.appendChild(image);
     menuItem.appendChild(menuInfo);
     divMenu.appendChild(menuItem);
-  }
+  });
+  
 }
 createItems(menu);
 
